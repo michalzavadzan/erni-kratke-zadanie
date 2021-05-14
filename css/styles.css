@@ -1,0 +1,157 @@
+/**BODY SKELETON**/
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #9cd7dd;
+  font-family: "Segoe UI";
+  font-size: 100%;
+}
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+section {
+  margin: 5rem 0;
+  width: 100%;
+  display: flex;
+}
+
+/*LIST*/
+
+article {
+  max-width: 45%;
+  padding: 0 2.5%;
+}
+h2 {
+  font-size: 1rem;
+  color: #017588;
+  font-weight: 300;
+}
+h2 .badge {
+  margin: 0 0.4rem;
+  padding: 0.2rem 0.6rem;
+  background: #fff;
+  border-radius: 50%;
+}
+ul {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+/*LIST ITEM*/
+
+li {
+  position: relative;
+  padding: 1rem;
+  border-bottom: 1px solid #b5e6ee;
+}
+li:last-child {
+  border-bottom: none;
+}
+.list-item-header {
+  display: flex;
+}
+h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0;
+  width: 100%;
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.menu-button {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border-radius: 50%;
+  position: relative;
+}
+.menu-button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 6px;
+  background: #017588;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  box-shadow: 0px 8px #017588, 0px 16px #017588;
+}
+.list-text {
+  color: #828282;
+  margin: 0.2rem 0 0;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  fill: #017588;
+}
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.list-item-badge {
+  padding: 0.1rem 0.5rem;
+  margin: 0.6rem 0.2rem 0.2rem 0;
+  border: 1px solid #017588;
+  border-radius: 20px;
+  color: #017588;
+}
+
+/*TOOLTIP*/
+
+.tooltip {
+  background: #000;
+  color: #fff;
+  position: absolute;
+  width: 50%;
+  border-radius: 10px;
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.6rem 1rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+.tooltip::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 100%;
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid black;
+  border-top: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+.list-text:hover ~ .tooltip {
+  opacity: 1;
+}
+
+/**MEDIA**/
+@media only screen and (max-width: 750px) {
+  section {
+    flex-direction: column;
+  }
+  article {
+    max-width: 100%;
+  }
+  .tooltip {
+    width: 90%;
+  }
+}
